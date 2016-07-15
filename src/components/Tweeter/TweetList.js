@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 
-
 const TweetList = ({tweets}) => {
     return (
         <table className="table">

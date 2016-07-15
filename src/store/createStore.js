@@ -30,7 +30,8 @@ export default (initialState = {}, history) => {
       applyMiddleware(...middleware),
       ...enhancers
     )
-  )
+  );
+  
   store.asyncReducers = {}
 
   if (module.hot) {

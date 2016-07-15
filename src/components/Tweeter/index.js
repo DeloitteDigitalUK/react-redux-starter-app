@@ -1,3 +1,3 @@
-import Tweeter from './Tweeter'
+import Counter from './Counter'
 
-export default Tweeter
+export default Counter

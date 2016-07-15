@@ -4,44 +4,52 @@ import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
 
 import TweetList from './TweetList';
+import * as tweetActions from './TweeterActions'
 
 class TweetPage extends React.Component {
 
-    constructor(props, context) {
-        super(props, context);
-    }
+  constructor(props, context) {
+    super(props, context);
+    //this.loadTweets = this.loadTweets.bind(this);
+  }
 
-    render() {
-        const {tweets} = this.props;
+  componentDidMount() {
+    console.log("Component did mount!!");
+    this.props.actions.loadTweets();
+  }
 
-        return (
-            <div>
-                <h1>Tweets</h1>
-                <TweetList tweets={tweets}/>
-            </div>
-        );
-    }
+
+  render() {
+    const {tweets} = this.props;
+
+    return (
+      <div>
+        <h1>Tweets</h1>
+        <TweetList tweets={tweets}/>
+      </div>
+    );
+  }
 }
 
 
 TweetPage.propTypes = {
-    tweets: PropTypes.array.isRequired
+  tweets: PropTypes.array.isRequired,
+  loadTweetsSuccess: React.PropTypes.any
 };
 
 
 /* *** Connect Code *** **/
-
 function mapStateToProps(state, ownProps) {
-    return {
-        tweets: state.tweets
-    };
+  return {
+    tweets: state.tweets
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        //actions : bindActionCreators(tweetActions, dispatch)
-    };
+  return {
+    actions: bindActionCreators(tweetActions, dispatch)
+  };
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(TweetList);
+export default connect(mapStateToProps, mapDispatchToProps)(TweetPage);
