@@ -1,0 +1,12 @@
+.tweeter {
+  font-weight: bold;
+}
+
+.tweeter--green {
+  composes: tweeter;
+  color: rgb(25,200,25);
+}
+
+.tweeterContainer {
+  margin: 1em auto;
+}
