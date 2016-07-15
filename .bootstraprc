@@ -1,0 +1,116 @@
+---
+# Output debugging info
+# loglevel: debug
+
+# Major version of Bootstrap: 3 or 4
+bootstrapVersion: 4
+
+# If Bootstrap version 4 is used - turn on/off flexbox model
+useFlexbox: true
+
+# Webpack loaders, order matters
+styleLoaders:
+  - style
+  - css
+  - postcss
+  - sass
+
+# Extract styles to stand-alone css file
+# Different settings for different environments can be used,
+# It depends on value of NODE_ENV environment variable
+# This param can also be set in webpack config:
+#   entry: 'bootstrap-loader/extractStyles'
+extractStyles: false
+env:
+  development:
+    extractStyles: false
+  production:
+    extractStyles: true
+
+
+# Customize Bootstrap variables that get imported before the original Bootstrap variables.
+# Thus, derived Bootstrap variables can depend on values from here.
+# See the Bootstrap _variables.scss file for examples of derived Bootstrap variables.
+#
+preBootstrapCustomizations: ./src/styles/_bootstrap_pre_variables.scss
+
+
+# This gets loaded after bootstrap/variables is loaded
+# Thus, you may customize Bootstrap variables
+# based on the values established in the Bootstrap _variables.scss file
+#
+bootstrapCustomizations: ./src/styles/_bootstrap_post_variables.scss
+
+
+# Import your custom styles here
+# Usually this endpoint-file contains list of @imports of your application styles
+#
+# appStyles: ./path/to/your/app/styles/endpoint.scss
+
+
+### Bootstrap styles
+styles:
+
+  # Mixins
+  mixins: true
+
+  # Reset and dependencies
+  normalize: true
+  print: true
+
+  # Core CSS
+  reboot: false
+  type: false
+  images: false
+  code: false
+  grid: true
+  tables: false
+  forms: false
+  buttons: false
+
+  # Components
+  animation: false
+  dropdown: false
+  button-group: false
+  input-group: false
+  custom-forms: false
+  nav: false
+  navbar: false
+  card: false
+  breadcrumb: false
+  pagination: false
+  pager: false
+  labels: false
+  jumbotron: false
+  alert: false
+  progress: false
+  media: false
+  list-group: false
+  responsive-embed: false
+  close: false
+
+  # Components w/ JavaScript
+  modal: false
+  tooltip: false
+  popover: false
+  carousel: false
+
+  # Utility classes
+  utilities: true
+  utilities-background: false
+  utilities-spacing: true
+  utilities-responsive: true
+
+### Bootstrap scripts
+scripts:
+  alert: false
+  button: false
+  carousel: false
+  collapse: false
+  dropdown: false
+  modal: false
+  popover: false
+  scrollspy: false
+  tab: false
+  tooltip: false
+  util: false
