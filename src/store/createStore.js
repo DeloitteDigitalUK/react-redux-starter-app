@@ -2,8 +2,9 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import makeRootReducer from './reducers'
+import initialState from '../initialState';
 
-export default (initialState = {}, history) => {
+export default (initialState = initialState, history) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
@@ -31,7 +32,7 @@ export default (initialState = {}, history) => {
       ...enhancers
     )
   );
-  
+
   store.asyncReducers = {}
 
   if (module.hot) {

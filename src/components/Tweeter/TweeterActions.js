@@ -3,7 +3,7 @@ import tweetApi from '../../apimock/mockTweetApi';
 export const LOAD_TWEETS_SUCCESS = 'LOAD_TWEETS_SUCCESS';
 export function loadTweetsSuccess(tweets) {
   return {
-    type: LOAD_TWEETS_SUCCESS, payload: tweets
+    type: LOAD_TWEETS_SUCCESS, tweets: tweets
   };
 }
 
