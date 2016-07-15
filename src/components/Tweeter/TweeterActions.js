@@ -1,13 +1,24 @@
+import tweetApi from '../../apimock/mockTweetApi';
+
 export const LOAD_TWEETS_SUCCESS = 'LOAD_TWEETS_SUCCESS';
-export function requestTweetsSuccess(tweets) {
+export function loadTweetsSuccess(tweets) {
   return {
-    type: LOAD_TWEETS_SUCCESS, tweets
+    type: LOAD_TWEETS_SUCCESS, payload: tweets
   };
 }
 
+/**
+ * LoadTweets thunk
+ * @returns {Function}
+ */
 export function loadTweets() {
   return function (dispatch) {
-    dispatch({type: LOAD_TWEETS_SUCCESS, payload: [{id: "tweet1", date: "today", message: "tweeter message1"}]});
+    return tweetApi.getAllTweets().then(tweets => {
+      console.log("tweetAction::loadTweets" + tweets);
+      dispatch(loadTweetsSuccess(tweets));
+    }).catch(error=> {
+      throw(error);
+    });
   };
 }
 
