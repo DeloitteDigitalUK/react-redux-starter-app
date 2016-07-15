@@ -21,8 +21,9 @@
     box-sizing: inherit;
   }
 
-  // The app render target in React Storybook.
-  #root {
-    padding: 2rem 0;
+  // Vertically center components in storybook.
+  .storybook-container {
+    height: 100vh;
+    align-items: center;
   }
 }
