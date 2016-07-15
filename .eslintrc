@@ -18,6 +18,7 @@
     "__BASENAME__" : false
   },
   "rules": {
-    "max-len": [2, 120, 2]
+    "max-len": [2, 120, 2],
+    "semi": "off"
   }
 }
