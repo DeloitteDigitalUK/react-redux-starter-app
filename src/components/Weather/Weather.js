@@ -3,10 +3,10 @@ import style from './Weather.scss'
 
 const Weather = (props) => {
   //console.log(props);
-  const {title} = props[0].query.results.channel;
-  const {temperature} = props[0].query.results.channel.units.temperature;
-  const {temp, text, date} = props[0].query.results.channel.item.condition;
-  const {forecast} = props[0].query.results.channel.item;
+  const {title} = props.weather[0].query.results.channel;
+  const {temperature} = props.weather[0].query.results.channel.units.temperature;
+  const {temp, text, date} = props.weather[0].query.results.channel.item.condition;
+  const {forecast} = props.weather[0].query.results.channel.item;
 
   return (
     <div className="row weather">
