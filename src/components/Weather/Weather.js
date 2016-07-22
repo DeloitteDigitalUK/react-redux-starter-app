@@ -2,24 +2,22 @@ import React from 'react'
 import style from './Weather.scss'
 
 const Weather = (props) => {
-  //console.log(props);
-  const {title} = props.weather[0].query.results.channel;
-  const {temperature} = props.weather[0].query.results.channel.units.temperature;
-  const {temp, text, date} = props.weather[0].query.results.channel.item.condition;
-  const {forecast} = props.weather[0].query.results.channel.item;
+  const {title} = props.weather.query.results.channel;
+  const {temperature} = props.weather.query.results.channel.units.temperature;
+  const {temp, text, date} = props.weather.query.results.channel.item.condition;
+  const {forecast} = props.weather.query.results.channel.item;
 
   return (
     <div className="row weather">
-      <h1 className={style['weather--title']}>{title}</h1>
       <div className="col-xs-12">
+        <button className="btn" onClick={props.forecast}>Generate London weather</button>
+        <h1 className={style['weather--title']}>{title}</h1>
         <div className={style['weather--today']}>
           <p>{date}</p>
           <p>{text}</p>
           <p>Temperature {temp} {temperature}</p>
         </div>
-
         <div className="row">
-
           <div className="col-xs-12">
             <h2 className={style['weather--subtitle']}>10 day forecast</h2>
             <div className="row" >

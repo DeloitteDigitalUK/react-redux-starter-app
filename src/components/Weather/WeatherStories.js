@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-
 import Weather from './Weather.js';
 
-const belfastWeather = [
-    {
-     "query": {
+const belfastWeather = {
+  "weather": {
+    "query": {
       "count": 1,
       "created": "2016-07-20T14:14:06Z",
       "lang": "en-US",
@@ -151,9 +150,9 @@ const belfastWeather = [
         }
        }
       }
-     }
     }
-  ];
+  }
+};
 
 storiesOf('Weather', module)
   .add('Default State', () => (
