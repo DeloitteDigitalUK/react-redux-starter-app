@@ -1,5 +1,5 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import {IndexLink, Link} from 'react-router'
 import classes from './Header.scss'
 
 
@@ -14,8 +14,8 @@ export const Header = () => (
       Counter
     </Link>
     {' · '}
-    <Link to='/login' activeClassName={classes.activeRoute}>
-     Login
+    <Link to='/search' activeClassName={classes.activeRoute}>
+      Search
     </Link>
 
   </div>

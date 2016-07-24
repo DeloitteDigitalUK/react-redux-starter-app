@@ -1,26 +1,24 @@
-
-
-export const USERNAME = 'USERNAME'
+export const SEARCHTERM = 'SEARCHTERM'
 
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function userLogin (value = 'john') {
+export function searchTweets (value = 'hi') {
   return {
-    type: USERNAME,
+    type: SEARCHTERM,
     payload: value
   }
 }
 
 
 export const actions = {
-  userLogin
+  searchTweets
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [USERNAME]: (state, action) => state
+  [SEARCHTERM]: (state, action) => state
 }

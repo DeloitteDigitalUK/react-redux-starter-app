@@ -1,25 +1,25 @@
 import { connect } from 'react-redux'
-import { userLogin } from '../modules/login'
+import { searchTweets } from '../modules/search'
 
 /*  This is a container component. Notice it does not contain any JSX,
  nor does it import React. This component is **only** responsible for
  wiring in the actions and state necessary to render a presentational
  component - in this case, the counter:   */
 
-import Login from 'components/Login'
+import Search from 'components/Search'
 
 /*  Object of action creators (can also be function that returns object).
  Keys will be passed as props to presentational components. Here we are
  implementing our wrapper around increment; the component doesn't care   */
 
 const mapActionCreators = {
-    userLogin: () => userLogin('john')
+    searchTweets: () => searchTweets('heeey')
 }
 
 const mapStateToProps = (state) => ({
-    userDetails: 'john'
+    searchDetails: 'hi im searching'
 })
 
 
 
-export default connect(mapStateToProps, mapActionCreators)(Login)
+export default connect(mapStateToProps, mapActionCreators)(Search)

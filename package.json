@@ -117,6 +117,7 @@
     "react-router": "^2.2.0",
     "react-router-redux": "^4.0.0",
     "redux": "^3.0.0",
+    "redux-form": "^5.3.1",
     "redux-thunk": "^2.0.0",
     "resolve-url-loader": "^1.6.0",
     "rimraf": "^2.5.1",
