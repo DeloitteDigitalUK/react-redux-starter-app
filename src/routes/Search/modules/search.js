@@ -4,10 +4,11 @@ export const SEARCHTERM = 'SEARCHTERM'
 // Actions
 // ------------------------------------
 
-export function createSearch(value = 1) {
+export function createSearch() {
   return (
-          type: SEARCHTERM,
-          payload:value);
+            type: '',
+            payload: ''
+          );
 }
 
 
@@ -19,5 +20,5 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [SEARCHTERM]: (state, action) => state
+  [SEARCHTERM]: (state, action) => state.payload
 }

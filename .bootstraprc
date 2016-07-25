@@ -65,7 +65,7 @@ styles:
   code: false
   grid: true
   tables: false
-  forms: false
+  forms: true
   buttons: true
 
   # Components

@@ -18,7 +18,7 @@ const {label, inputValue, buttonText, errorMessage} = props;
             </div>
             <div className="row">
                 <div className={cx('col-xs-6')}>
-                    <input type="text" value={inputValue} className={styles.input}/>
+                    <input type="text" value={inputValue} className={cx('form-control'), styles.input}/>
                     <img src={SearchIcon} className={styles.icon}/>
                 </div>
                 <div className={cx('col-xs-6')}>

@@ -13,11 +13,11 @@ import Search from 'components/Search'
  implementing our wrapper around increment; the component doesn't care   */
 
 const mapActionCreators = {
-  createSearch: () => createSearch('heeey')
+
 }
 
 const mapStateToProps = (state) => ({
-  searchDetails: 'show'
+
 })
 
 
