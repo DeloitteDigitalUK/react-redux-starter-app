@@ -1,0 +1,35 @@
+.input {
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid gray 2px;
+  padding-left: 15px;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.label {
+  padding-left: 0px;
+  margin-top: 30px;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.button {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.button:hover {
+  background-color: #AAB8C2;
+}
+
+.error {
+  margin-left: 15px;
+  color: red;
+}
+

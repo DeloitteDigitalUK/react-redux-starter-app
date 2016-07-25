@@ -61,18 +61,18 @@ styles:
   # Core CSS
   reboot: false
   type: false
-  images: false
+  images: true
   code: false
   grid: true
   tables: false
   forms: false
-  buttons: false
+  buttons: true
 
   # Components
   animation: false
   dropdown: false
-  button-group: false
-  input-group: false
+  button-group: true
+  input-group: true
   custom-forms: false
   nav: false
   navbar: false

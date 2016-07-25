@@ -1,53 +1,43 @@
-import React, {Component} from 'react'
-import {reduxForm} from 'redux-form';
-import {createSearch} from '../../routes/Search/modules/search'
+import React, {PropTypes} from 'react';
+import cx from 'classnames';
 
-class Search extends Component {
-  render() {
-    const {fields: {title, searchTerm}, handleSubmit} = this.props;
+import styles from './Search.scss';
+import SearchIcon from './assets/light-searchIcon.png';
+import TwitterIcon from './assets/Twitter_Logo_Blue.png';
 
-    return (
-      <form onSubmit={handleSubmit(this.props.createSearch)}>
-        <h3>Search</h3>
-        <div className="form-group">
-          <label>Title</label>
-          <input type="text" className="form-control" {...title}/>
-          <div className="text-help">
-            {title.touched ? title.error : '' }
-          </div>
+const Search = (props) => {
+  const {label, inputValue, buttonText, errorMessage} = props;
+  return (
+    <div>
+      <div className="row">
+        <img src={TwitterIcon} className={styles.twitterIcon} alt="twitter-icon" height="80" width="80"/>
+        <div className={styles.label}>
+          <h3> {label}</h3>
         </div>
-        <div className="form-group">
-          <label>Search Term</label>
-          <input type="text" className="form-control" {...searchTerm}/>
-          <div className="text-help">
-            {searchTerm.touched ? searchTerm.error : '' }
-          </div>
+      </div>
+      <div className="row">
+        <div className={cx('col-xs-6')}>
+          <input type="text" value={inputValue} className={styles.input}/>
+          <img src={SearchIcon} className={styles.icon}/>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-    );
+        <div className={cx('col-xs-6')}>
+          <button type="submit" className={cx('btn', styles.button )}>{buttonText}</button>
+        </div>
+      </div>
+      <div className="row">
+        <div className={cx('col-xs-12'), styles.error}>
+          <h5>{errorMessage}</h5>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-  }
-}
+Search.propTypes = {
+  label: PropTypes.string.isRequired,
+  inputValue: PropTypes.string,
+  buttonText: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string
+};
 
-function validate(values) {
-  const errors = {};
-  if (values.title) {
-    if (values.title.match(/[$-/:-?{-~!"^_`\[\]]/)) {
-      errors.title = 'Title contains forbidden char';
-    }
-  } else {
-    errors.title = 'Enter a title';
-  }
-
-  // If the searchterm does not exist, prompt the user to enter one.
-  if (!values.searchTerm) {
-    errors.searchTerm = 'Enter a search term';
-  }
-  return errors;
-}
-
-export default reduxForm({
-  form: 'SearchForm',
-  fields: ['title', 'searchTerm'], validate
-}, null, {createSearch})(Search);
+export default Search;
