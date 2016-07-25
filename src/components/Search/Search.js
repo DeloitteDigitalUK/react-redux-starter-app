@@ -4,7 +4,6 @@ import {createSearch} from '../../routes/Search/modules/search'
 
 class Search extends Component {
   render() {
-
     const {fields: {title, searchTerm}, handleSubmit} = this.props;
 
     return (
