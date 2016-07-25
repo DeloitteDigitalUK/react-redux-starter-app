@@ -1,6 +1,7 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import {IndexLink, Link} from 'react-router'
 import classes from './Header.scss'
+
 
 export const Header = () => (
   <div>
@@ -12,6 +13,11 @@ export const Header = () => (
     <Link to='/counter' activeClassName={classes.activeRoute}>
       Counter
     </Link>
+    {' · '}
+    <Link to='/search' activeClassName={classes.activeRoute}>
+      Search
+    </Link>
+
   </div>
 )
 
