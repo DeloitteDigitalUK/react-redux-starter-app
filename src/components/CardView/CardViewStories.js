@@ -45,4 +45,22 @@ storiesOf('CardView', module)
         buttonText="View Docs"
       />
     </div>
-  ));
+  ))
+  .add('Multiple Cards', () => {
+    const props = {
+      title: 'My Bootstrap Card',
+      text: 'This is an example of a React component for a Bootstrap card.',
+      buttonUrl: 'http://v4-alpha.getbootstrap.com/components/card',
+      buttonText: 'View Docs',
+    };
+
+    return (
+      <div className="col-xs-12">
+        <div className="card-deck">
+          <CardView {...props} />
+          <CardView {...props} />
+          <CardView {...props} />
+        </div>
+      </div>
+    );
+  });
