@@ -1,11 +1,18 @@
 import React, { PropTypes } from 'react';
+import cx from 'classnames';
+
+import styles from './CardView.scss';
 
 const CardView = (props) => {
   const { title, text, imageUrl, imageAlt, buttonUrl, buttonText } = props;
 
   let imageEle;
   if (imageUrl) {
-    imageEle = <img className="card-img-top" src={imageUrl} alt={imageAlt} />;
+    imageEle = <img
+      className={cx(styles.image, 'card-img-top')}
+      src={imageUrl}
+      alt={imageAlt}
+      />;
   }
 
   let buttonEle;
