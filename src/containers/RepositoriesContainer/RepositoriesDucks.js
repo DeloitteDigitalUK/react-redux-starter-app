@@ -8,7 +8,6 @@ const initialState = {
 
 // Reducer
 export default function reducer (state = initialState, action = {}) {
-  console.log('Calling', state);
   return {
     ...state
   };

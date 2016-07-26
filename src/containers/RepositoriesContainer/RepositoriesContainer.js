@@ -33,7 +33,6 @@ class RepositoriesContainer extends Component {
 
   render () {
     const { isLoading, repos } = this.props;
-    console.log('aaaa', isLoading);
 
     if (repos && repos.length) {
       <RepoList repos={repos} />;
