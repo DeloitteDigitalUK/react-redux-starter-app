@@ -10,7 +10,7 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const Weather = require('./containers/WeatherContainer').default
-      const reducer = require('./modules/weather').default
+      const reducer = require('./modules/weatherDucks').default
 
       /*  Add the reducer to the store on key 'weather'  */
       injectReducer(store, { key: 'weather', reducer })

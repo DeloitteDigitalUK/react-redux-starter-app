@@ -1,3 +1,3 @@
-import Weather from './Weather.js';
+import Weather from './WeatherView.js';
 
 export default Weather;

@@ -1,11 +1,12 @@
 import React from 'react'
 import style from './Weather.scss'
 
-const Weather = (props) => {
-  const {title} = props.weather.query.results.channel;
-  const {temperature} = props.weather.query.results.channel.units.temperature;
-  const {temp, text, date} = props.weather.query.results.channel.item.condition;
-  const {forecast} = props.weather.query.results.channel.item;
+const WeatherView = (props) => {
+  const { channel } = props.weather.query.results;
+  const { title } = channel;
+  const { forecast } = channel.item;
+  const { temp, text, date } = channel.item.condition;
+  const { temperature } = channel.units.temperature;
 
   return (
     <div className="row weather">
@@ -36,4 +37,4 @@ const Weather = (props) => {
   );
 }
 
-export default Weather
+export default WeatherView

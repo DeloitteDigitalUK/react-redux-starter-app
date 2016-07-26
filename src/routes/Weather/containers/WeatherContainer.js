@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import { forecast } from '../modules/weather'
+import { forecast } from '../modules/weatherDucks'
 
-import Weather from 'components/Weather'
+import WeatherView from 'components/Weather/WeatherView'
 
 const mapActionCreators = {
   forecast: () => forecast('Belfast, uk')
@@ -11,4 +11,4 @@ const mapStateToProps = (state) => ({
   weather: state.weather
 })
 
-export default connect(mapStateToProps, mapActionCreators)(Weather)
+export default connect(mapStateToProps, mapActionCreators)(WeatherView)
