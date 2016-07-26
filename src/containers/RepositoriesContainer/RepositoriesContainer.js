@@ -20,22 +20,22 @@ class RepositoriesContainer extends Component {
   static propTypes = {
     isLoading: PropTypes.bool.isRequired,
     repos: PropTypes.array,
-    loadRepos: PropTypes.func.isRequired
+    load: PropTypes.func.isRequired
   };
 
   constructor (props) {
     super(props);
 
     if (typeof props.repos === 'undefined') {
-      props.loadRepos();
+      props.load();
     }
   }
 
   render () {
     const { isLoading, repos } = this.props;
 
-    if (repos && repos.length) {
-      <RepoList repos={repos} />;
+    if (repos && repos.length > 0) {
+      return <RepoList repos={repos} />;
     }
 
     return isLoading ? <p>Loading...</p> : <p>No repositories to display.</p>;
