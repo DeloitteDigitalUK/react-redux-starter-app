@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './Search.scss';
 import SearchIcon from './assets/light-searchIcon.png';
-import TwitterIcon from './assets/Twitter_Logo_Blue.png';
+import GitHubIcon from './assets/Octocat.jpg';
 
 const Search = (props) => {
 const {label, inputValue, buttonText, errorMessage} = props;
@@ -11,7 +11,7 @@ const {label, inputValue, buttonText, errorMessage} = props;
     return (
         <div>
             <div className="row">
-                <img src={TwitterIcon} className={styles.twitterIcon} alt="twitter-icon" height="80" width="80"/>
+                <img src={GitHubIcon} className={styles.gitHubIcon} alt="twitter-icon" height="80" width="80"/>
                 <div className={styles.label}>
                     <h3> {label}</h3>
                 </div>
