@@ -10,7 +10,13 @@ const CardView = (props) => {
 
   let buttonEle;
   if (buttonUrl && buttonText) {
-    buttonEle = <a href={buttonUrl} className="btn btn-secondary" target="_blank">{buttonText}</a>;
+    buttonEle = <a
+      href={buttonUrl}
+      className="btn btn-secondary"
+      target="_blank"
+      rel="noopener noreferrer">
+      {buttonText}
+    </a>;
   }
 
   return (
@@ -25,7 +31,7 @@ const CardView = (props) => {
   );
 };
 
-CardView.PropTypes = {
+CardView.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   imageUrl: PropTypes.string,
