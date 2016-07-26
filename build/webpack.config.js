@@ -191,6 +191,7 @@ if (isUsingCSSModules) {
     webpackConfig.sassResources = [
         path.resolve(paths.client(), 'styles/resources/resources.scss'),
         path.resolve(paths.client(), 'styles/resources/colors.scss'),
+        path.resolve(paths.client(), 'styles/resources/typography.scss')
     ]
 
   webpackConfig.module.loaders.push({
