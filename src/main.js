@@ -5,6 +5,7 @@ import { useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import routes from './routes';
 
 // ========================================================
 // Browser History Setup
@@ -41,8 +42,6 @@ if (__DEBUG__) {
 const MOUNT_NODE = document.getElementById('root')
 
 let render = (routerKey = null) => {
-  const routes = require('./routes/index').default(store)
-
   ReactDOM.render(
     <AppContainer
       store={store}

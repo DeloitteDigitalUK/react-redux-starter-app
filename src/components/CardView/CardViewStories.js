@@ -3,7 +3,7 @@ import { storiesOf } from '@kadira/storybook';
 
 import CardView from './index.js';
 
-import logo from '../../images/bootstrap-logo.png';
+import logo from '../../static/images/bootstrap-logo.png';
 
 storiesOf('CardView', module)
   .add('Text Only', () => (
