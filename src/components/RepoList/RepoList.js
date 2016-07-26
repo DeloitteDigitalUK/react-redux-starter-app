@@ -10,6 +10,8 @@ const RepoList = ({ repos }) => (
         text={repo.description}
         imageUrl={repo.avatar}
         imageAlt={`Owner: ${repo.author}`}
+        imageWidth={180}
+        imageHeight={180}
         buttonUrl={repo.url}
         buttonText="View on Github"
       />
