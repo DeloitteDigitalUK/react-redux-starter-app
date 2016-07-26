@@ -59,14 +59,14 @@ styles:
   print: true
 
   # Core CSS
-  reboot: false
-  type: false
-  images: false
+  reboot: true
+  type: true
+  images: true
   code: false
   grid: true
   tables: false
   forms: false
-  buttons: false
+  buttons: true
 
   # Components
   animation: false
@@ -76,7 +76,7 @@ styles:
   custom-forms: false
   nav: false
   navbar: false
-  card: false
+  card: true
   breadcrumb: false
   pagination: false
   pager: false
