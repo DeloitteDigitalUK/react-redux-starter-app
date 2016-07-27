@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import config from '../config'
 import _debug from 'debug'
+import pa11y from 'pa11y'
 
 const debug = _debug('app:webpack:config')
 const paths = config.utils_paths
