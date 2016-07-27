@@ -19,7 +19,15 @@ const REDUCERS = {
   [LOAD_SUCCESS]: (state, action) => ({
     ...state,
     isLoading: false,
-    repos: action.data
+    repos: action.data.map(repo => ({
+      author: repo.owner.login,
+      avatar: repo.owner.avatar_url,
+      description: repo.description,
+      id: repo.id,
+      name: repo.name,
+      starsCount: repo.stargazers_count,
+      url: repo.html_url
+    }))
   }),
   [LOAD_ERROR]: (state, action) => ({
     ...state,

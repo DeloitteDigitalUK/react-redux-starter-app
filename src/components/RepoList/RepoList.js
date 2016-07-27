@@ -35,7 +35,7 @@ RepoList.propTypes = {
     description: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    starsCount: PropTypes.string.isRequired,
+    starsCount: PropTypes.number,
     url: PropTypes.string.isRequired
   }).isRequired)
 };
