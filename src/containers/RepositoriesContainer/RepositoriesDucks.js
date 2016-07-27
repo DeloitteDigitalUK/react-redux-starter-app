@@ -46,7 +46,7 @@ export function load () {
   return (dispatch, getState) => {
     // Already loading?
     if (getState().repositories.isLoading) {
-      return Promise.resolve();
+      return;
     }
 
     // Notify that we're loading.
