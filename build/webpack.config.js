@@ -187,7 +187,7 @@ if (isUsingCSSModules) {
       'sass-resources'
     ]
   })
-
+/* All files in styles/resources to be added here */
     webpackConfig.sassResources = [
         path.resolve(paths.client(), 'styles/resources/_typography.scss'),
         path.resolve(paths.client(), 'styles/resources/_colors.scss')
