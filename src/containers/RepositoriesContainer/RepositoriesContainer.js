@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import _ from 'lodash';
 
 // Actions
 import * as actionCreators from './RepositoriesDucks.js';
@@ -10,7 +11,7 @@ import RepoList from '../../components/RepoList/';
 
 const mapStateToProps = state => ({
   isLoading: state.repositories.isLoading,
-  repos: state.repositories.list
+  repos: state.repositories.repos
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
@@ -25,15 +26,12 @@ class RepositoriesContainer extends Component {
 
   constructor (props) {
     super(props);
-
-    if (typeof props.repos === 'undefined') {
-      props.load();
-    }
+    props.load();
   }
 
   render () {
-    const { isLoading, repos } = this.props;
-    return <RepoList repos={repos} isLoading={isLoading} />
+    const repoListProps = _.pick(this.props, ['isLoading', 'repos']);
+    return <RepoList {...repoListProps} />
   }
 }
 
