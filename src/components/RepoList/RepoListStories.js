@@ -26,6 +26,19 @@ storiesOf('RepoList', module)
   )
   .add('Multiple Repos', () => (
     <RepoList
+      isLoading={false}
       repos={repos}
+    />
+  ))
+  .add('No Repos', () => (
+    <RepoList
+      isLoading={false}
+      repos={[]}
+    />
+  ))
+  .add('Loading', () => (
+    <RepoList
+      isLoading
+      repos={undefined}
     />
   ));

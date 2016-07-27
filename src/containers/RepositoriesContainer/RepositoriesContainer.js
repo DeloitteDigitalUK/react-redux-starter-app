@@ -8,12 +8,12 @@ import * as actionCreators from './RepositoriesDucks.js';
 // Components
 import RepoList from '../../components/RepoList/';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   isLoading: state.repositories.isLoading,
   repos: state.repositories.list
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators(actionCreators, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 
 class RepositoriesContainer extends Component {
 
@@ -33,12 +33,7 @@ class RepositoriesContainer extends Component {
 
   render () {
     const { isLoading, repos } = this.props;
-
-    if (repos && repos.length > 0) {
-      return <RepoList repos={repos} />;
-    }
-
-    return isLoading ? <p>Loading...</p> : <p>No repositories to display.</p>;
+    return <RepoList repos={repos} isLoading={isLoading} />
   }
 }
 

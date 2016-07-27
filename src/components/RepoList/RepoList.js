@@ -1,25 +1,34 @@
 import React, { PropTypes } from 'react';
 import CardView from '../CardView/';
 
-const RepoList = ({ repos }) => (
-  <div className="card-columns">
-    {repos.map(repo =>
-      <CardView
-        key={repo.id}
-        title={repo.name}
-        text={repo.description}
-        imageUrl={repo.avatar}
-        imageAlt={`Owner: ${repo.author}`}
-        imageWidth={180}
-        imageHeight={180}
-        buttonUrl={repo.url}
-        buttonText="View on Github"
-      />
-    )}
-  </div>
-);
+const RepoList = ({ isLoading, repos }) => {
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (repos && repos.length) {
+    return <div className="card-columns">
+      {repos.map(repo =>
+        <CardView
+          key={repo.id}
+          title={repo.name}
+          text={repo.description}
+          imageUrl={repo.avatar}
+          imageAlt={`Owner: ${repo.author}`}
+          imageWidth={180}
+          imageHeight={180}
+          buttonUrl={repo.url}
+          buttonText="View on Github"
+        />
+      )}
+    </div>;
+  } else {
+    return <p>No repositories to display.</p>
+  }
+};
 
 RepoList.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   repos: PropTypes.arrayOf(PropTypes.shape({
     author: PropTypes.string,
     avatar: PropTypes.string,
@@ -28,7 +37,7 @@ RepoList.propTypes = {
     name: PropTypes.string.isRequired,
     starsCount: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
-  }).isRequired).isRequired
+  }).isRequired)
 };
 
 export default RepoList;
