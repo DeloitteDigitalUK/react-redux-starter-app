@@ -6,14 +6,14 @@ import SearchIcon from './assets/light-searchIcon.png';
 import GitHubIcon from './assets/Octocat.jpg';
 
 const Search = (props) => {
-const {label, inputValue, buttonText, errorMessage} = props;
+const {heading, inputValue, buttonText, errorMessage} = props;
 
     return (
         <div>
             <div className="row">
                 <img src={GitHubIcon} className={styles.gitHubIcon} alt="twitter-icon" height="80" width="80"/>
                 <div className={styles.label}>
-                    <h3> {label}</h3>
+                    <h3>{heading}</h3>
                 </div>
             </div>
             <div className="row">
