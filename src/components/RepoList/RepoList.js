@@ -6,25 +6,25 @@ const RepoList = ({ isLoading, repos }) => {
     return <p>Loading...</p>;
   }
 
-  if (repos && repos.length) {
-    return <div className="card-columns">
-      {repos.map(repo =>
-        <CardView
-          key={repo.id}
-          title={repo.name}
-          text={repo.description}
-          imageUrl={repo.avatar}
-          imageAlt={`Owner: ${repo.author}`}
-          imageWidth={180}
-          imageHeight={180}
-          buttonUrl={repo.url}
-          buttonText="View on Github"
-        />
-      )}
-    </div>;
-  } else {
-    return <p>No repositories to display.</p>
+  if (!repos || repos.length === 0) {
+    return <p>No repositories to display.</p>;
   }
+
+  return <div className="card-columns">
+    {repos.map(repo =>
+      <CardView
+        key={repo.id}
+        title={repo.name}
+        text={repo.description}
+        imageUrl={repo.avatar}
+        imageAlt={`Owner: ${repo.author}`}
+        imageWidth={180}
+        imageHeight={180}
+        buttonUrl={repo.url}
+        buttonText="View on Github"
+      />
+    )}
+  </div>;
 };
 
 RepoList.propTypes = {
