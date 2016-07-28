@@ -59,8 +59,8 @@ styles:
   print: true
 
   # Core CSS
-  reboot: false
-  type: false
+  reboot: true
+  type: true
   images: true
   code: false
   grid: true
@@ -76,7 +76,7 @@ styles:
   custom-forms: false
   nav: false
   navbar: false
-  card: false
+  card: true
   breadcrumb: false
   pagination: false
   pager: false
