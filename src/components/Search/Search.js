@@ -35,10 +35,10 @@ const {heading, inputValue, buttonText, errorMessage} = props;
 };
 
 Search.propTypes = {
-label: PropTypes.string.isRequired,
-inputValue: PropTypes.string,
-buttonText: PropTypes.string.isRequired,
-errorMessage: PropTypes.string
+    label: PropTypes.string.isRequired,
+    inputValue: PropTypes.string,
+    buttonText: PropTypes.string.isRequired,
+    errorMessage: PropTypes.string
 };
 
 export default Search;
