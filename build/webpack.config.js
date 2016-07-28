@@ -26,6 +26,7 @@ const webpackConfig = {
 const APP_ENTRY_PATHS = [
   'bootstrap-loader',
   'babel-polyfill',
+  'whatwg-fetch', // Make fetch() polyfill global.
   paths.client('main.js')
 ]
 
