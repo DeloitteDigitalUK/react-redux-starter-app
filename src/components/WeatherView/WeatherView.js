@@ -1,5 +1,5 @@
-import React from 'react'
-import style from './Weather.scss'
+import React from 'react';
+import style from './Weather.scss';
 
 const WeatherView = (props) => {
   const { channel } = props.weather.query.results;

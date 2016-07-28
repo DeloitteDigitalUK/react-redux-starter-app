@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import WeatherView from './WeatherView.js';
-import { belfastWeather } from '../../routes/Weather/modules/WeatherHelper.js'
+import { belfastWeather } from '../../routes/Weather/modules/WeatherHelper.js';
 
 const weather = {
   "weather":  belfastWeather
