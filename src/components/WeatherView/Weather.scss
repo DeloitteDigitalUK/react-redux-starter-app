@@ -4,17 +4,26 @@
 
 .weather--title {
   color: #39afff;
+  margin-bottom: 0.5em;
 }
 
 .weather--subtitle {
   color: #9DDCF2;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .weather--today {
   margin-bottom: 4em;
 }
 
+.weather--button {
+  margin-bottom: 0.5em;
+}
+
 .forecast {
   margin-bottom: 2em;
+}
+
+.forecast--item {
+  margin-bottom: 0em;
 }

@@ -28,7 +28,7 @@ class WeatherContainer extends Component {
 
   render () {
     const weatherViewProps = _.pick(this.props, ['weather']);
-    return <WeatherView {...weatherViewProps} forecast={this.props.forecast}/>
+    return <WeatherView {...weatherViewProps} forecastWeather={this.props.forecast}/>
   }
 }
 

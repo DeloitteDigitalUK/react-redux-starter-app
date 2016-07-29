@@ -1,2 +1,1 @@
-import component from './WeatherView.js';
-export default component;
+export { default } from './WeatherView.js';
