@@ -1,3 +1,1 @@
-import component from './Search.js';
-
-export default component;
+export { default } from './Search.js';
