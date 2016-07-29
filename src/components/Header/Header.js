@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { IndexLink } from 'react-router';
 import classes from './Header.scss';

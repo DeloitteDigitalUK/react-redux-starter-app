@@ -205,8 +205,6 @@ if (isUsingCSSModules) {
   })
 }
 
-
-
 // Loaders for files that should not be treated as CSS modules.
 const excludeCSSModules = isUsingCSSModules ? cssModulesRegex : false
 webpackConfig.module.loaders.push({

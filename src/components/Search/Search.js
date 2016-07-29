@@ -17,7 +17,7 @@ class Search extends Component {
 
 
     render () {
-        const {heading, inputValue, buttonText, errorMessage, onSubmit} = this.props;
+      const {heading, inputValue, buttonText, errorMessage, onSubmit} = this.props;
       return (
           <div>
               <div className="row">
@@ -27,11 +27,11 @@ class Search extends Component {
                   </div>
               </div>
               <div className="row">
-                  <div className={cx('col-xs-6')}>
+                  <div className="col-xs-6">
                       <input ref="textInput" type="text" defaultValue={inputValue} className={cx('form-control'), styles.input}/>
                       <img src={SearchIcon} className={styles.icon}/>
                   </div>
-                  <div className={cx('col-xs-6')}>
+                  <div className="col-xs-6">
                       <button type="submit" className={cx('btn', styles.button )} onClick={() => onSubmit(this.refs.textInput.value)}>{buttonText}</button>
                   </div>
               </div>
