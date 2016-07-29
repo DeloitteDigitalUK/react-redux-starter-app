@@ -7,7 +7,6 @@ import _ from 'lodash';
 import * as actionCreators from './RepositoriesDucks.js';
 
 // Components
-import Search from '../../components/Search/';
 import RepoList from '../../components/RepoList/';
 
 const mapStateToProps = state => ({
