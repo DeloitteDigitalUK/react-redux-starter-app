@@ -65,14 +65,14 @@ styles:
   code: false
   grid: true
   tables: false
-  forms: false
+  forms: true
   buttons: true
 
   # Components
   animation: false
   dropdown: false
-  button-group: false
-  input-group: false
+  button-group: true
+  input-group: true
   custom-forms: false
   nav: false
   navbar: false
