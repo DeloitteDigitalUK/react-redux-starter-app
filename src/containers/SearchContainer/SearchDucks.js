@@ -6,14 +6,12 @@ const initialState = {
     inputValue: undefined,
     buttonText: "Search",
     errorMessage: undefined,
-    isLoading: false
 };
 
 // Reducers
 const REDUCERS = {
     [SEARCH]: (state, action) => ({
         ...state,
-        isLoading: true,
         inputValue: action.payload
     })
 };

@@ -17,29 +17,27 @@ const mapStateToProps = (state) => ({
     inputValue: state.search.inputValue,
     buttonText: state.search.buttonText,
     errorMessage: state.search.errorMessage,
-    isLoading: state.search.isLoading,
 })
 
 class SearchContainer extends Component {
 
-  static propTypes = {
-    heading: PropTypes.string.isRequired,
-    inputValue: PropTypes.string,
-    buttonText: PropTypes.string.isRequired,
-    errorMessage: PropTypes.string,
-    isLoading: PropTypes.bool.isRequired
-  };
+    static propTypes = {
+        heading: PropTypes.string.isRequired,
+        inputValue: PropTypes.string,
+        buttonText: PropTypes.string.isRequired,
+        errorMessage: PropTypes.string,
+    };
 
-  constructor (props) {
-    super(props);
-    props.createSearch();
-  }
+    constructor (props) {
+        super(props);
+        props.createSearch();
+    }
 
-  render () {
-    console.log('isLoading', this.props.isLoading, this.props.inputValue);
-    const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
-    return <Search {...searchProps} onSubmit={this.props.createSearch} />
-  }
+    render () {
+        console.log(this.props.inputValue);
+        const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
+        return <Search {...searchProps} onSubmit={this.props.createSearch} />
+     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
