@@ -3,11 +3,13 @@ import { routerReducer as router } from 'react-router-redux'
 
 // Reducers
 import repositories from '../containers/RepositoriesContainer/RepositoriesDucks.js';
+import repositoriesDetail from '../containers/RepositoriesDetailContainer/RepositoriesDetailDuck.js';
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
     // Add sync reducers here
     repositories,
+    repositoriesDetail,
     router,
     ...asyncReducers
   })
