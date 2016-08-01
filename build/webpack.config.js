@@ -4,6 +4,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import config from '../config'
 import _debug from 'debug'
+import path from 'path'
+
 
 const debug = _debug('app:webpack:config')
 const paths = config.utils_paths
@@ -153,7 +155,7 @@ const BASE_CSS_LOADER = 'css?sourceMap&-minimize'
 // Add any packge names here whose styles need to be treated as CSS modules.
 // These paths will be combined into a single regex.
 const PATHS_TO_TREAT_AS_CSS_MODULES = [
-  // 'react-toolbox', (example)
+     // 'react-toolbox', (example)
 ]
 
 // If config has CSS modules enabled, treat this project's styles as CSS modules.
@@ -182,9 +184,15 @@ if (isUsingCSSModules) {
       'style',
       cssModulesLoader,
       'postcss',
-      'sass?sourceMap'
+      'sass?sourceMap',
+      'sass-resources'
     ]
   })
+/* All files in styles/resources to be added here */
+    webpackConfig.sassResources = [
+        path.resolve(paths.client(), 'styles/resources/_typography.scss'),
+        path.resolve(paths.client(), 'styles/resources/_colors.scss')
+    ]
 
   webpackConfig.module.loaders.push({
     test: /\.css$/,
@@ -219,11 +227,12 @@ webpackConfig.module.loaders.push({
   ]
 })
 
+
 // ------------------------------------
 // Style Configuration
 // ------------------------------------
 webpackConfig.sassLoader = {
-  includePaths: paths.client('styles')
+  includePaths: paths.client('style')
 }
 
 webpackConfig.postcss = [

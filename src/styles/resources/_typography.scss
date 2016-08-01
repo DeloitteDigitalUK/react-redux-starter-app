@@ -1,0 +1,33 @@
+/*Variables can be used globally without importing*/
+//Font Sizes
+$typography1: 70px;
+$typography2: 32px;
+$typography3: 26px;
+$typography4: 16px;
+$typography5: 15px;
+$typography6: 12px;
+
+
+h1 {
+	font-size: $typography1;
+}
+
+h2 {
+	font-size: $typography2;
+}
+
+h3 {
+	font-size: $typography3;
+}
+
+h4 {
+	font-size: $typography4;
+}
+
+p {
+	font-size: $typography5;
+}
+
+li {
+	font-size: $typography6;
+}
