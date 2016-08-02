@@ -30,14 +30,12 @@ class SearchContainer extends Component {
 
     constructor (props) {
         super(props);
-        props.createSearch();
     }
 
     render () {
-        console.log(this.props.inputValue);
         const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
         return <Search {...searchProps} onSubmit={this.props.createSearch} />
-     }
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);

@@ -14,10 +14,6 @@ const REDUCERS = {
     [SEARCH]: (state, action) => ({
         ...state,
         inputValue: action.payload
-    }),
-    [LOAD_ERROR]: (state, action) => ({
-        ...state,
-        errorMessage: action.payload
     })
 };
 
@@ -31,13 +27,5 @@ export function createSearch(inputValue) {
     return {
         type: SEARCH,
         payload: inputValue
-    };
-}
-
-/*failed search function */
-export function loadError(errorMessage) {
-    return {
-        type: LOAD_ERROR,
-        payload: errorMessage
     };
 }
