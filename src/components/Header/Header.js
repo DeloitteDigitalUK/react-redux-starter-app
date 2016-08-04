@@ -7,7 +7,7 @@ export const Header = () => (
     <h1>React Redux Starter App</h1>
     <ul>
       <li>
-        <IndexLink to='/' activeClassName={classes.activeRoute}>
+        <IndexLink to="/" activeClassName={classes.activeRoute}>
           Home
         </IndexLink>
       </li>

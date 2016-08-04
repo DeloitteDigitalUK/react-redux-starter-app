@@ -12,10 +12,10 @@ const checkStatus = response => {
     return response;
   }
 
-  let error = new Error(statusText);
+  const error = new Error(statusText);
   error.response = response;
   throw error;
-}
+};
 
 /**
  * Parse the given response body as JSON.
@@ -25,7 +25,7 @@ const checkStatus = response => {
  */
 const parseJSON = response => {
   return response.json();
-}
+};
 
 export default {
   /**
@@ -40,5 +40,5 @@ export default {
       .then(checkStatus)
       .then(parseJSON)
       .catch(err => console.warn(err));
-  }
+  },
 };

@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux'
-import { routerReducer as router } from 'react-router-redux'
-import { reducer as formReducer } from 'redux-form'
+import { combineReducers } from 'redux';
+import { routerReducer as router } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
 // Reducers
 import repositories from '../containers/RepositoriesContainer/RepositoriesDucks.js';
@@ -15,13 +15,13 @@ export const makeRootReducer = (asyncReducers) => {
     repositories,
     weatherforecast,
     router,
-    ...asyncReducers
-  })
-}
+    ...asyncReducers,
+  });
+};
 
 export const injectReducer = (store, { key, reducer }) => {
-  store.asyncReducers[key] = reducer
-  store.replaceReducer(makeRootReducer(store.asyncReducers))
-}
+  store.asyncReducers[key] = reducer;
+  store.replaceReducer(makeRootReducer(store.asyncReducers));
+};
 
-export default makeRootReducer
+export default makeRootReducer;

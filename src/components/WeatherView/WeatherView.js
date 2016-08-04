@@ -1,15 +1,15 @@
 import React from 'react';
 import style from './Weather.scss';
 
-const WeatherViewForecastItem = ({date, high, low, text}) => {
+const WeatherViewForecastItem = ({ date, high, low, text }) => {
   return (
     <div className="col-xs-6 col-sm-4 col-lg-2">
       <p className={style['forecast--item']}>{date}</p>
       <p className={style['forecast--item']}>High {high} Low {low}</p>
       <p className={style.forecast}>{text}</p>
     </div>
-  )
-}
+  );
+};
 
 const WeatherView = (props) => {
   const { title, forecast, unit, todaysCondition, todaysDate, temperature } = props.weather;
@@ -36,6 +36,6 @@ const WeatherView = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export default WeatherView
+export default WeatherView;

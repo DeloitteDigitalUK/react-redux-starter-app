@@ -1,10 +1,12 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "airbnb"
+    "airbnb",
+    "plugin:react/recommended"
   ],
   "plugins": [
-    "babel"
+    "babel",
+    "react"
   ],
   "env"     : {
     "browser" : true

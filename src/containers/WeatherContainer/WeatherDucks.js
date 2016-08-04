@@ -9,7 +9,7 @@ const FORECAST_SUCCESS = 'react-redux-starter-app/weather/FORECAST_SUCCESS';
 const FORECAST_ERROR = 'react-redux-starter-app/weather/FORECAST_ERROR';
 
 const initialState = {
-  weather: belfastWeather
+  weather: belfastWeather,
 };
 
 
@@ -25,46 +25,46 @@ const REDUCERS = {
     return {
       ...state,
       weather: {
-        title: title,
-        forecast: forecast,
-        temperature: temp ,
+        title,
+        forecast,
+        temperature: temp,
         todaysCondition: text,
         todaysDate: date,
-        unit: temperature
-      }
+        unit: temperature,
+      },
     };
   },
   [FORECAST_ERROR]: (state, action) => ({
     ...state,
-    error: action.error
-  })
+    error: action.error,
+  }),
 };
 
-export default function reducer (state = initialState, action = {}) {
+export default function reducer(state = initialState, action = {}) {
   const handler = REDUCERS[action.type];
   return handler ? handler(state, action) : state;
-};
+}
 
 // Action Creators
-export function forecast () {
+export function forecast() {
   return (dispatch, getState) => {
     return ApiUtils.get(`${weatherbaseUrl}${query}`)
       .then(data => dispatch(forecastSuccess(data)))
       .catch(error => dispatch(forecastError(error)));
-  }
+  };
 }
 
-function forecastSuccess (result) {
+function forecastSuccess(result) {
   return {
     type: FORECAST_SUCCESS,
-    data: result
-  }
+    data: result,
+  };
 }
 
-function forecastError (error) {
+function forecastError(error) {
   console.log(error);
   return {
     type: FORECAST_ERROR,
-    error
-  }
+    error,
+  };
 }

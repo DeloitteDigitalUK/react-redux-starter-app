@@ -10,7 +10,7 @@ import * as actionCreators from './WeatherDucks.js';
 import WeatherView from '../../components/WeatherView/';
 
 const mapStateToProps = state => ({
-  weather: state.weatherforecast.weather
+  weather: state.weatherforecast.weather,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
@@ -19,16 +19,16 @@ class WeatherContainer extends Component {
 
   static propTypes = {
     weather: PropTypes.object,
-    forecast: PropTypes.func.isRequired
+    forecast: PropTypes.func.isRequired,
   };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
   }
 
-  render () {
+  render() {
     const weatherViewProps = _.pick(this.props, ['weather']);
-    return <WeatherView {...weatherViewProps} forecastWeather={this.props.forecast}/>
+    return <WeatherView {...weatherViewProps} forecastWeather={this.props.forecast} />;
   }
 }
 
