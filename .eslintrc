@@ -1,8 +1,7 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "standard",
-    "standard-react"
+    "airbnb"
   ],
   "plugins": [
     "babel"
@@ -18,7 +17,7 @@
     "__BASENAME__" : false
   },
   "rules": {
-    "max-len": [2, 120, 2],
-    "semi": "off"
+    "generator-star-spacing": 0,
+    "max-len": [2, 120, 2]
   }
 }
