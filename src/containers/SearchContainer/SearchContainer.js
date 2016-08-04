@@ -27,11 +27,7 @@ class SearchContainer extends Component {
         buttonText: PropTypes.string.isRequired,
         errorMessage: PropTypes.string,
     };
-
-    constructor (props) {
-        super(props);
-    }
-
+    
     render () {
         const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
         return <Search {...searchProps} onSubmit={this.props.createSearch} />

@@ -1,5 +1,5 @@
 import ApiUtils from '../../utils/ApiUtils.js';
-
+import _ from 'lodash';
 // Actions
 const LOAD = 'react-redux-starter-app/repositories/LOAD';
 const LOAD_SUCCESS = 'react-redux-starter-app/repositories/LOAD_SUCCESS';
@@ -35,11 +35,11 @@ const REDUCERS = {
     isLoading: false,
     error: action.error
   }),
-  /*When SEARCH action is triggered --filter the repos by the repo name
-    that starts with the inputValue payload.*/
+  /*When SEARCH action is triggered --filter the repos by the name
+  that starts with the inputValue payload.*/
   [SEARCH]: (state, action) => ({
     ...state,
-    repos: state.repos.filter((repo) => repo.name.startsWith(action.payload))
+    repos: state.repos.filter((repo) => _.startsWith(repo.name, action.payload))
   })
 };
 
