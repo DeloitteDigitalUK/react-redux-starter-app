@@ -10,7 +10,6 @@ import * as actionCreators from './RepositoriesDetailDuck.js';
 import RepoDetail from '../../components/RepoDetail/';
 
 const mapStateToProps = (state, props) => {
-  console.log('state', state);
   return {
     repos: state.repositoriesDetail.repos,
     id: props.id
@@ -32,9 +31,9 @@ class RepositoriesDetailContainer extends Component {
   }
 
   render () {
-    let repoId = parseInt(this.props.id);
-    console.log('test', this.props);
+    const repoId = parseInt(this.props.id);
     const repo = _.find(this.props.repos, {'id': repoId});
+    console.log(repo);
     return <RepoDetail {...repo} />
   }
 }

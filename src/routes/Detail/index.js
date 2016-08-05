@@ -1,2 +1,1 @@
-import component from './Detail.js';
-export default component;
+export { default } from './Detail.js';
