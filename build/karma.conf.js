@@ -1,7 +1,8 @@
 import { argv } from 'yargs';
+import _debug from 'debug';
+
 import config from '../config';
 import webpackConfig from './webpack.config';
-import _debug from 'debug';
 
 const debug = _debug('app:karma');
 debug('Create configuration.');
@@ -62,7 +63,7 @@ const karmaConfig = {
   },
 };
 
-if (config.globals.__COVERAGE__) {
+if (config.globals.__COVERAGE__) { // eslint-disable-line no-underscore-dangle
   karmaConfig.reporters.push('coverage');
   karmaConfig.webpack.module.preLoaders = [{
     test: /\.(js|jsx)$/,

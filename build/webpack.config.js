@@ -2,10 +2,10 @@ import webpack from 'webpack';
 import cssnano from 'cssnano';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import config from '../config';
 import _debug from 'debug';
 import path from 'path';
 
+import config from '../config';
 
 const debug = _debug('app:webpack:config');
 const paths = config.utils_paths;
@@ -278,7 +278,7 @@ if (!__DEV__) {
     loader.loaders && loader.loaders.find((name) => /css/.test(name.split('?')[0]))
   ).forEach((loader) => {
     const [first, ...rest] = loader.loaders;
-    loader.loader = ExtractTextPlugin.extract(first, rest.join('!'));
+    loader.loader = ExtractTextPlugin.extract(first, rest.join('!')); // eslint-disable-line no-param-reassign
     Reflect.deleteProperty(loader, 'loaders');
   });
 

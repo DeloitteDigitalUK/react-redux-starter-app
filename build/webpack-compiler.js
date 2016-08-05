@@ -28,8 +28,7 @@ export default function webpackCompiler(webpackConfig, statsFormat = DEFAULT_STA
       } else {
         debug('No errors or warnings encountered.');
       }
-      resolve(jsonStats);
+      return resolve(jsonStats);
     });
   });
 }
-
