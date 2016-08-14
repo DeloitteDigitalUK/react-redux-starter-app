@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-starter-kit",
-  "version": "3.0.0-alpha.1",
-  "description": "Get started with React, Redux, and React-Router!",
+  "name": "react-redux-starter-app",
+  "version": "0.1.0",
+  "description": "Starter app with React, Redux, Webpack, CSS Modules, API calls etc.",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.0",
@@ -73,9 +73,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
+    "url": "git+https://github.com/DeloitteDigitalUK/react-redux-starter-app.git"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
+  "author": "Deloitte Digital ",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.5.1",
@@ -91,7 +91,7 @@
     "babel-register": "^6.3.13",
     "babel-runtime": "^6.3.19",
     "better-npm-run": "0.0.9",
-    "bootstrap": "^4.0.0-alpha.3",
+    "bootstrap": "4.0.0-alpha.2",
     "bootstrap-loader": "^1.1.0",
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
