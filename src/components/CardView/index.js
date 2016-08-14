@@ -1,2 +1,1 @@
-import component from './CardView.js';
-export default component;
+export { default } from './CardView.js';

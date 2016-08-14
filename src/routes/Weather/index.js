@@ -1,2 +1,1 @@
-import component from './WeatherPage.js';
-export default component;
+export { default } from './WeatherPage.js';
