@@ -10,7 +10,7 @@ const RepoList = ({ isLoading, repos }) => {
     return <p>No repositories to display.</p>;
   }
 
-  return <div className="card-columns">
+  return (<div className="card-columns">
     {repos.map(repo =>
       <CardView
         key={repo.id}
@@ -24,7 +24,7 @@ const RepoList = ({ isLoading, repos }) => {
         buttonText="View on Github"
       />
     )}
-  </div>;
+  </div>);
 };
 
 RepoList.propTypes = {
@@ -36,8 +36,8 @@ RepoList.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     starsCount: PropTypes.number,
-    url: PropTypes.string.isRequired
-  }).isRequired)
+    url: PropTypes.string.isRequired,
+  }).isRequired),
 };
 
 export default RepoList;

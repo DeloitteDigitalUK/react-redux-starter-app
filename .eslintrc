@@ -1,11 +1,11 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "standard",
-    "standard-react"
+    "airbnb"
   ],
   "plugins": [
-    "babel"
+    "babel",
+    "react"
   ],
   "env"     : {
     "browser" : true
@@ -18,7 +18,8 @@
     "__BASENAME__" : false
   },
   "rules": {
+    "generator-star-spacing": 0,
     "max-len": [2, 120, 2],
-    "semi": "off"
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }

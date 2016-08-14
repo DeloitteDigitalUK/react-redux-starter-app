@@ -10,12 +10,12 @@ const repo = {
   description: 'Starter app with React, Redux, Webpack, CSS Modules, API calls etc.',
   name: 'react-redux-starter-app',
   starsCount: 3,
-  url: 'https://github.com/DeloitteDigitalUK/react-redux-starter-app'
+  url: 'https://github.com/DeloitteDigitalUK/react-redux-starter-app',
 };
 
 const repos = _.range(0, 5).map(i => ({
   id: i,
-  ...repo
+  ...repo,
 }));
 
 storiesOf('RepoList', module)

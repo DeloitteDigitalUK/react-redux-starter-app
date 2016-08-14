@@ -4,7 +4,7 @@ import WeatherView from './WeatherView.js';
 import { belfastWeather } from './WeatherFixture.js';
 
 const weather = {
-  weather:  belfastWeather
+  weather: belfastWeather,
 };
 
 storiesOf('Weather', module)

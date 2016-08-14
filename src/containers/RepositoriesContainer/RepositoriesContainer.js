@@ -11,7 +11,7 @@ import RepoList from '../../components/RepoList/';
 
 const mapStateToProps = state => ({
   isLoading: state.repositories.isLoading,
-  repos: state.repositories.repos
+  repos: state.repositories.repos,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
@@ -21,17 +21,17 @@ class RepositoriesContainer extends Component {
   static propTypes = {
     isLoading: PropTypes.bool.isRequired,
     repos: PropTypes.array,
-    load: PropTypes.func.isRequired
+    load: PropTypes.func.isRequired,
   };
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     props.load();
   }
 
-  render () {
+  render() {
     const repoListProps = _.pick(this.props, ['isLoading', 'repos']);
-    return <RepoList {...repoListProps} />
+    return <RepoList {...repoListProps} />;
   }
 }
 
