@@ -1,8 +1,7 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "airbnb",
-    "plugin:react/recommended"
+    "airbnb"
   ],
   "plugins": [
     "babel",
@@ -20,6 +19,7 @@
   },
   "rules": {
     "generator-star-spacing": 0,
-    "max-len": [2, 120, 2]
+    "max-len": [2, 120, 2],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }
