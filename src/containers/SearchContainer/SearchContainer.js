@@ -26,6 +26,7 @@ class SearchContainer extends Component {
     inputValue: PropTypes.string,
     buttonText: PropTypes.string.isRequired,
     errorMessage: PropTypes.string,
+    createSearch: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -34,7 +35,6 @@ class SearchContainer extends Component {
   }
 
   render() {
-    console.log(this.props.inputValue);
     const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
     return <Search {...searchProps} onSubmit={this.props.createSearch} />;
   }

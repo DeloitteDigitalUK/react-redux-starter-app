@@ -1,11 +1,12 @@
 import Koa from 'koa';
 import convert from 'koa-convert';
 import webpack from 'webpack';
-import webpackConfig from '../build/webpack.config';
 import historyApiFallback from 'koa-connect-history-api-fallback';
 import serve from 'koa-static';
 import proxy from 'koa-proxy';
 import _debug from 'debug';
+
+import webpackConfig from '../build/webpack.config';
 import config from '../config';
 import webpackDevMiddleware from './middleware/webpack-dev';
 import webpackHMRMiddleware from './middleware/webpack-hmr';

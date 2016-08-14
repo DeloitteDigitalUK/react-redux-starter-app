@@ -1,3 +1,4 @@
+/* eslint-disable */
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 import applyExpressMiddleware from '../lib/apply-express-middleware';
 import _debug from 'debug';

@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
@@ -15,21 +15,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 
-class WeatherContainer extends Component {
+const WeatherContainer = (props) => {
+  const weatherViewProps = _.pick(props, ['weather']);
 
-  static propTypes = {
-    weather: PropTypes.object,
-    forecast: PropTypes.func.isRequired,
-  };
+  return <WeatherView {...weatherViewProps} forecastWeather={props.forecast} />;
+};
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const weatherViewProps = _.pick(this.props, ['weather']);
-    return <WeatherView {...weatherViewProps} forecastWeather={this.props.forecast} />;
-  }
-}
+WeatherContainer.propTypes = {
+  weather: PropTypes.object,
+  forecast: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(WeatherContainer);

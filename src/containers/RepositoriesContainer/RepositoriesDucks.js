@@ -12,7 +12,7 @@ const initialState = {
 
 // Reducers
 const REDUCERS = {
-  [LOAD]: (state, action) => ({
+  [LOAD]: (state) => ({
     ...state,
     isLoading: true,
   }),
@@ -41,25 +41,6 @@ export default function reducer(state = initialState, action = {}) {
   return handler ? handler(state, action) : state;
 }
 
-// Action Creators
-export function load() {
-  return (dispatch, getState) => {
-    // Already loading?
-    if (getState().repositories.isLoading) {
-      return;
-    }
-
-    // Notify that we're loading.
-    dispatch({
-      type: LOAD,
-    });
-
-    return ApiUtils.get('https://api.github.com/users/michael-martin/starred')
-      .then(data => dispatch(loadSuccess(data)))
-      .catch(err => dispatch(loadError(err)));
-  };
-}
-
 function loadSuccess(data) {
   return {
     type: LOAD_SUCCESS,
@@ -71,5 +52,24 @@ function loadError(error) {
   return {
     type: LOAD_ERROR,
     error,
+  };
+}
+
+// Action Creators
+export function load() {
+  return (dispatch, getState) => {
+    // Already loading?
+    if (getState().repositories.isLoading) {
+      return undefined;
+    }
+
+    // Notify that we're loading.
+    dispatch({
+      type: LOAD,
+    });
+
+    return ApiUtils.get('https://api.github.com/users/michael-martin/starred')
+      .then(data => dispatch(loadSuccess(data)))
+      .catch(err => dispatch(loadError(err)));
   };
 }

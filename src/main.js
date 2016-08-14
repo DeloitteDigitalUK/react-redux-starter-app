@@ -21,7 +21,7 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 // react-router-redux reducer under the routerKey "router" in src/routes/index.js,
 // so we need to provide a custom `selectLocationState` to inform
 // react-router-redux of its location.
-const initialState = window.___INITIAL_STATE__;
+const initialState = window.___INITIAL_STATE__; // eslint-disable-line no-underscore-dangle
 const store = createStore(initialState, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store, {
   selectLocationState: (state) => state.router,
@@ -58,7 +58,7 @@ let render = (routerKey = null) => {
 if (__DEV__ && module.hot) {
   const renderApp = render;
   const renderError = (error) => {
-    const RedBox = require('redbox-react').default;
+    const RedBox = require('redbox-react').default; // eslint-disable-line global-require
 
     ReactDOM.render(<RedBox error={error} />, MOUNT_NODE);
   };
