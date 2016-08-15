@@ -31,7 +31,7 @@ class RepositoriesContainer extends Component {
 
   render() {
     const repoListProps = _.pick(this.props, ['isLoading', 'repos']);
-    return <RepoList {...repoListProps} />;
+    return <RepoList noReposText="No repositories to display." {...repoListProps} />;
   }
 }
 

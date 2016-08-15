@@ -1,7 +1,6 @@
-import React from 'react'
-import { bindActionCreators } from 'redux'
+import React from 'react';
 import CardView from '../../../src/components/CardView/';
-import { shallow } from 'enzyme'
+import { shallow } from 'enzyme';
 
 describe('(Component) CardView', () => {
   let wrapper, props;

@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import CardView from '../CardView/';
 
-const RepoList = ({ isLoading, repos }) => {
+const RepoList = ({ isLoading, noReposText, repos }) => {
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
   if (!repos || repos.length === 0) {
-    return <p>No repositories to display.</p>;
+    return <p>{noReposText}</p>;
   }
 
   return (<div className="card-columns">
@@ -29,6 +29,7 @@ const RepoList = ({ isLoading, repos }) => {
 
 RepoList.propTypes = {
   isLoading: PropTypes.bool.isRequired,
+  noReposText: PropTypes.string.isRequired,
   repos: PropTypes.arrayOf(PropTypes.shape({
     author: PropTypes.string,
     avatar: PropTypes.string,
