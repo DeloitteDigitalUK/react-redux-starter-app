@@ -76,16 +76,16 @@ Edit at Your Own Risk
 // N.B.: globals added here must _also_ be added to .eslintrc
 config.globals = {
   'process.env'  : {
-    'NODE_ENV' : JSON.stringify(config.env),
+    NODE_ENV : JSON.stringify(config.env),
   },
-  'NODE_ENV'     : config.env,
-  '__DEV__'      : config.env === 'development',
-  '__PROD__'     : config.env === 'production',
-  '__TEST__'     : config.env === 'test',
-  '__DEBUG__'    : config.env === 'development' && !argv.no_debug,
-  '__COVERAGE__' : !argv.watch && config.env === 'test',
-  '__BASENAME__' : JSON.stringify(process.env.BASENAME || ''),
-}
+  NODE_ENV     : config.env,
+  __DEV__      : config.env === 'development',
+  __PROD__     : config.env === 'production',
+  __TEST__     : config.env === 'test',
+  __DEBUG__    : config.env === 'development' && !argv.no_debug,
+  __COVERAGE__ : !argv.watch && config.env === 'test',
+  __BASENAME__ : JSON.stringify(process.env.BASENAME || ''),
+};
 
 // ------------------------------------
 // Validate Vendor Dependencies
