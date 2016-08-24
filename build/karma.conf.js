@@ -54,6 +54,7 @@ const karmaConfig = {
       'react/lib/ReactContext': 'window',
     },
     sassLoader: webpackConfig.sassLoader,
+    sassResources: webpackConfig.sassResources,
   },
   webpackMiddleware: {
     noInfo: true,
