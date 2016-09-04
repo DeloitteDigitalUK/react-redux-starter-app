@@ -11,7 +11,7 @@ import RepoList from '../../components/RepoList/';
 
 const mapStateToProps = state => ({
   isLoading: state.repositories.isLoading,
-  repos: state.repositories.repos,
+  repos: state.repositories.data,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
