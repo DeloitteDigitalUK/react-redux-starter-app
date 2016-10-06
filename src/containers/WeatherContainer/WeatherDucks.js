@@ -1,4 +1,4 @@
-import ApiUtils, { weatherbaseUrl } from '../../utils/ApiUtils.js';
+import ApiUtils, { weatherbaseUrl } from '../../utils/ApiUtils.ts';
 import { belfastWeather } from '../../components/WeatherView/WeatherFixture.js';
 
 const query = '?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D"london%2C%20uk")&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys.json'; // eslint-disable-line max-len

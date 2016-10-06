@@ -18,7 +18,7 @@ const webpackConfig = {
   devtool: config.compiler_devtool,
   resolve: {
     root: paths.client(),
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['', '.js', '.jsx', '.json', '.ts', '.tsx'],
   },
   module: {},
 };
@@ -143,6 +143,11 @@ webpackConfig.module.loaders = [{
 {
   test: /\.json$/,
   loader: 'json',
+},
+{
+  test: /\.ts(x?)$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader?presets[]=es2015&presets[]=react!ts-loader'
 }];
 
 // ------------------------------------

@@ -1,4 +1,4 @@
-import ApiUtils from '../../utils/ApiUtils.js';
+import ApiUtils from '../../utils/ApiUtils.ts';
 
 // Actions
 const LOAD = 'react-redux-starter-app/repositories/LOAD';
@@ -12,31 +12,38 @@ const initialState = {
 
 // Reducers
 const REDUCERS = {
-  [LOAD]: (state) => ({
-    ...state,
-    isLoading: true,
-  }),
-  [LOAD_SUCCESS]: (state, action) => ({
-    ...state,
-    isLoading: false,
-    repos: action.data.map(repo => ({
-      author: repo.owner.login,
-      avatar: repo.owner.avatar_url,
-      description: repo.description,
-      id: repo.id,
-      name: repo.name,
-      starsCount: repo.stargazers_count,
-      url: repo.html_url,
-    })),
-  }),
-  [LOAD_ERROR]: (state, action) => ({
-    ...state,
-    isLoading: false,
-    error: action.error,
-  }),
+  [LOAD]: (state) => Object.assign(
+    {},
+    state,
+    { isLoading: true },
+  ),
+  [LOAD_SUCCESS]: (state, action) => Object.assign(
+    {},
+    state,
+    {
+      isLoading: false,
+      repos: action.data.map(repo => ({
+        author: repo.owner.login,
+        avatar: repo.owner.avatar_url,
+        description: repo.description,
+        id: repo.id,
+        name: repo.name,
+        starsCount: repo.stargazers_count,
+        url: repo.html_url,
+      })),
+    }
+  ),
+  [LOAD_ERROR]: (state, action) => Object.assign(
+    {},
+    state,
+    {
+      isLoading: false,
+      error: action.error,
+    }
+  ),
 };
 
-export default function reducer(state = initialState, action = {}) {
+export default function reducer(state = initialState, action: {type: string}) {
   const handler = REDUCERS[action.type];
   return handler ? handler(state, action) : state;
 }
@@ -68,7 +75,7 @@ export function load() {
       type: LOAD,
     });
 
-    return ApiUtils.get('https://api.github.com/users/michael-martin/starred')
+    return ApiUtils.request('https://api.github.com/users/michael-martin/starred', 'GET')
       .then(data => dispatch(loadSuccess(data)))
       .catch(err => dispatch(loadError(err)));
   };

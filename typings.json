@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750",
+    "whatwg-streams": "registry:dt/whatwg-streams#0.0.0+20160829180742"
+  }
+}

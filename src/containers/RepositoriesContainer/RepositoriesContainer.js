@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
 // Actions
-import * as actionCreators from './RepositoriesDucks.js';
+import * as actionCreators from './RepositoriesDucks.ts';
 
 // Components
 import RepoList from '../../components/RepoList/';
