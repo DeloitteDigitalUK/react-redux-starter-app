@@ -4,7 +4,7 @@ import * as chai from 'chai';
 const expect = chai.expect;
 
 describe('(Container) RepositoriesDucks', () => {
-  it('renders successfully', () => {
+  it('runs TS tests', () => {
     expect(true).to.be.true;
   });
 });
