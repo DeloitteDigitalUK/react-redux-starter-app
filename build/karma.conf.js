@@ -67,7 +67,7 @@ const karmaConfig = {
 if (config.globals.__COVERAGE__) { // eslint-disable-line no-underscore-dangle
   karmaConfig.reporters.push('coverage');
   karmaConfig.webpack.module.preLoaders = [{
-    test: /\.(js|jsx)$/,
+    test: /\.(js|jsx|ts|tsx)$/,
     include: new RegExp(config.dir_client),
     loader: 'isparta',
     exclude: /node_modules/,
