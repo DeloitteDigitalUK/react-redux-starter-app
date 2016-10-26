@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import _ from 'lodash';
 
-import RepoList from './index.js';
+import RepoList from './index';
 
 const repo = {
   author: 'DeloitteDigitalUK',

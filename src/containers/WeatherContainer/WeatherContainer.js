@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
 // Actions
-import * as actionCreators from './WeatherDucks.js';
+import * as actionCreators from './WeatherDucks';
 
 // Components
 import WeatherView from '../../components/WeatherView/';

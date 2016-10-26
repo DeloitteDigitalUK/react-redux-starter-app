@@ -75,4 +75,4 @@ if (config.globals.__COVERAGE__) { // eslint-disable-line no-underscore-dangle
 }
 
 // cannot use `export default` because of Karma.
-module.exports = (cfg) => cfg.set(karmaConfig);
+module.exports = cfg => cfg.set(karmaConfig);

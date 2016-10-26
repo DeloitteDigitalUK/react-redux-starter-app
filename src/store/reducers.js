@@ -3,11 +3,11 @@ import { routerReducer as router } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
 // Reducers
-import repositories from '../containers/RepositoriesContainer/RepositoriesDucks.js';
-import weatherforecast from '../containers/WeatherContainer/WeatherDucks.js';
-import search from '../containers/SearchContainer/SearchDucks.js';
+import repositories from '../containers/RepositoriesContainer/RepositoriesDucks';
+import weatherforecast from '../containers/WeatherContainer/WeatherDucks';
+import search from '../containers/SearchContainer/SearchDucks';
 
-export const makeRootReducer = (asyncReducers) => combineReducers({
+export const makeRootReducer = asyncReducers => combineReducers({
   form: formReducer,
   // Add sync reducers here
   search,

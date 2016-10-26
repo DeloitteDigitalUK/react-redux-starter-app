@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 
 // Actions
-import * as actionCreators from './SearchDucks.js';
+import * as actionCreators from './SearchDucks';
 
 // Components
 import Search from '../../components/Search/';
@@ -12,7 +12,7 @@ import Search from '../../components/Search/';
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   heading: state.search.heading,
   inputValue: state.search.inputValue,
   buttonText: state.search.buttonText,

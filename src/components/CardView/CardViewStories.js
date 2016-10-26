@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import CardView from './index.js';
+import CardView from './index';
 
 import logo from '../../static/images/bootstrap-logo.png';
 

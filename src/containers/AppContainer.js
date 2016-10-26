@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 const AppContainer = (props) => {
   const { history, routes, routerKey, store } = props;
 
+  /* eslint-disable react/no-children-prop */
   return (
     <Provider store={store}>
       <div style={{ height: '100%' }}>
@@ -12,6 +13,7 @@ const AppContainer = (props) => {
       </div>
     </Provider>
   );
+  /* eslint-enable react/no-children-prop */
 };
 
 AppContainer.propTypes = {
