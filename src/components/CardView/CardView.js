@@ -18,7 +18,8 @@ const CardView = (props) => {
       href={buttonUrl}
       className="btn btn-secondary"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+    >
       {buttonText}
     </a>
     : undefined;
@@ -52,7 +53,7 @@ CardView.propTypes = {
   imageWidth: PropTypes.number,
   imageHeight: PropTypes.number,
   buttonUrl: PropTypes.string,
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
 };
 
 export default CardView;

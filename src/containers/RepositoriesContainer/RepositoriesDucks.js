@@ -7,14 +7,14 @@ const LOAD_ERROR = 'react-redux-starter-app/repositories/LOAD_ERROR';
 
 const initialState = {
   isLoading: false,
-  repos: undefined
+  repos: undefined,
 };
 
 // Reducers
 const REDUCERS = {
-  [LOAD]: (state, action) => ({
+  [LOAD]: (state) => ({
     ...state,
-    isLoading: true
+    isLoading: true,
   }),
   [LOAD_SUCCESS]: (state, action) => ({
     ...state,
@@ -26,50 +26,50 @@ const REDUCERS = {
       id: repo.id,
       name: repo.name,
       starsCount: repo.stargazers_count,
-      url: repo.html_url
-    }))
+      url: repo.html_url,
+    })),
   }),
   [LOAD_ERROR]: (state, action) => ({
     ...state,
     isLoading: false,
-    error: action.error
-  })
+    error: action.error,
+  }),
 };
 
-export default function reducer (state = initialState, action = {}) {
+export default function reducer(state = initialState, action = {}) {
   const handler = REDUCERS[action.type];
   return handler ? handler(state, action) : state;
-};
+}
+
+function loadSuccess(data) {
+  return {
+    type: LOAD_SUCCESS,
+    data,
+  };
+}
+
+function loadError(error) {
+  return {
+    type: LOAD_ERROR,
+    error,
+  };
+}
 
 // Action Creators
-export function load () {
+export function load() {
   return (dispatch, getState) => {
     // Already loading?
     if (getState().repositories.isLoading) {
-      return;
+      return undefined;
     }
 
     // Notify that we're loading.
     dispatch({
-      type: LOAD
+      type: LOAD,
     });
 
     return ApiUtils.get('https://api.github.com/users/michael-martin/starred')
       .then(data => dispatch(loadSuccess(data)))
       .catch(err => dispatch(loadError(err)));
-  }
-}
-
-function loadSuccess (data) {
-  return {
-    type: LOAD_SUCCESS,
-    data
-  }
-}
-
-function loadError (error) {
-  return {
-    type: LOAD_ERROR,
-    error
-  }
+  };
 }

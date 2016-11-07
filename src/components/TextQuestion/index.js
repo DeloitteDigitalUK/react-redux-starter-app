@@ -1,2 +1,1 @@
-import component from './TextQuestion.js';
-export default component;
+export { default } from './TextQuestion.js';

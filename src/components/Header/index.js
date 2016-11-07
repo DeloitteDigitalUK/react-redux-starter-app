@@ -1,2 +1,1 @@
-import component from './Header';
-export default component;
+export { default } from './Header';
