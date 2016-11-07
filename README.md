@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DeloitteDigitalUK/react-redux-starter-app.svg?branch=master)](https://travis-ci.org/DeloitteDigitalUK/react-redux-starter-app)
+
 # React Redux Starter App
 
 This app is intended as an exemplar of how we like to build React apps. You can clone this, and start the app to see
