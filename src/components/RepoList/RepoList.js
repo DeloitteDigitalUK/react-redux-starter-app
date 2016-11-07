@@ -5,7 +5,6 @@ const RepoList = ({ isLoading, noReposText, repos }) => {
   if (isLoading) {
     return <p>Loading...</p>;
   }
-
   if (!repos || repos.length === 0) {
     return <p>{noReposText}</p>;
   }
@@ -22,6 +21,8 @@ const RepoList = ({ isLoading, noReposText, repos }) => {
         imageHeight={180}
         buttonUrl={repo.url}
         buttonText="View on Github"
+        linkText="View details"
+        linkUrl={'/details/' + repo.id}
       />
     )}
   </div>);
