@@ -1,6 +1,5 @@
 // Actions
 const SEARCH = 'react-redux-starter-app/search/SEARCH';
-const LOAD_ERROR = 'react-redux-starter-app/search/LOAD_ERROR';
 
 const initialState = {
     heading: "Search Github",
