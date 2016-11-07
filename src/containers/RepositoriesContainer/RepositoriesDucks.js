@@ -1,9 +1,11 @@
+import _ from 'lodash';
 import ApiUtils from '../../utils/ApiUtils';
 
 // Actions
 const LOAD = 'react-redux-starter-app/repositories/LOAD';
 const LOAD_SUCCESS = 'react-redux-starter-app/repositories/LOAD_SUCCESS';
 const LOAD_ERROR = 'react-redux-starter-app/repositories/LOAD_ERROR';
+const SEARCH = 'react-redux-starter-app/search/SEARCH';
 
 const initialState = {
   isLoading: false,
@@ -33,6 +35,12 @@ const REDUCERS = {
     ...state,
     isLoading: false,
     error: action.error,
+  }),
+  // When SEARCH action is triggered --filter the repos by the name
+  // that starts with the inputValue payload.
+  [SEARCH]: (state, action) => ({
+    ...state,
+    repos: state.repos.filter((repo) => _.startsWith(repo.name, action.payload)),
   }),
 };
 
