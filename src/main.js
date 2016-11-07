@@ -49,7 +49,7 @@ let render = (routerKey = null) => {
       routes={routes}
       routerKey={routerKey}
     />,
-    MOUNT_NODE
+    MOUNT_NODE,
   );
 };
 

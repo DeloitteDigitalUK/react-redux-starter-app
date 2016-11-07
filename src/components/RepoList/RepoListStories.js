@@ -19,11 +19,11 @@ const repos = _.range(0, 5).map(i => ({
 }));
 
 storiesOf('RepoList', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <div className="col-xs-12">
       {story()}
     </div>
-  )
+  ))
   .add('Multiple Repos', () => (
     <RepoList
       isLoading={false}

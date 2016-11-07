@@ -6,11 +6,11 @@ import CardView from './index';
 import logo from '../../static/images/bootstrap-logo.png';
 
 storiesOf('CardView', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <div className="col-xs-4 col-xs-offset-4">
       {story()}
     </div>
-  )
+  ))
   .add('Text Only', () => (
     <CardView
       title="My Bootstrap Card"
