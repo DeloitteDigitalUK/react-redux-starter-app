@@ -69,7 +69,7 @@ if (__DEV__) {
   debug('Enable plugins for live development (HMR, NoErrors).');
   webpackConfig.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
   );
 } else if (__PROD__) {
   debug('Enable plugins for production (OccurenceOrder, Dedupe & UglifyJS).');
@@ -82,7 +82,7 @@ if (__DEV__) {
         dead_code: true,
         warnings: false,
       },
-    })
+    }),
   );
 }
 
@@ -91,7 +91,7 @@ if (!__TEST__) {
   webpackConfig.plugins.push(
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor'],
-    })
+    }),
   );
 }
 
@@ -275,7 +275,7 @@ webpackConfig.module.loaders.push(
 if (!__DEV__) {
   debug('Apply ExtractTextPlugin to CSS loaders.');
   webpackConfig.module.loaders.filter((loader) =>
-    loader.loaders && loader.loaders.find((name) => /css/.test(name.split('?')[0]))
+    loader.loaders && loader.loaders.find((name) => /css/.test(name.split('?')[0])),
   ).forEach((loader) => {
     const [first, ...rest] = loader.loaders;
     loader.loader = ExtractTextPlugin.extract(first, rest.join('!')); // eslint-disable-line no-param-reassign
@@ -285,7 +285,7 @@ if (!__DEV__) {
   webpackConfig.plugins.push(
     new ExtractTextPlugin('[name].[contenthash].css', {
       allChunks: true,
-    })
+    }),
   );
 }
 

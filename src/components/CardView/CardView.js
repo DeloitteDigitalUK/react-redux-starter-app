@@ -27,7 +27,8 @@ const CardView = (props) => {
   const link = (linkText && linkUrl)
     ? <a
       href={linkUrl}
-      className="btn btn-secondary">
+      className="btn btn-secondary"
+    >
       {linkText}
     </a>
     : undefined;
@@ -54,6 +55,8 @@ CardView.propTypes = {
   imageHeight: PropTypes.number,
   buttonUrl: PropTypes.string,
   buttonText: PropTypes.string,
+  linkUrl: PropTypes.string,
+  linkText: PropTypes.string,
 };
 
 export default CardView;

@@ -34,9 +34,7 @@ const WeatherView = (props) => {
           <div className="col-xs-12">
             <h2 className={style['weather--subtitle']}>10 day forecast</h2>
             <div className="row" >
-              {forecast.map(day =>
-                <WeatherViewForecastItem {...day} key={day.date} />
-              )}
+              {forecast.map(day => <WeatherViewForecastItem {...day} key={day.date} />)}
             </div>
           </div>
         </div>

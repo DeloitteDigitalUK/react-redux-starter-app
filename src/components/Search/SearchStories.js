@@ -1,14 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Search from './index.js';
+import Search from './index';
 
 storiesOf('Search', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <div className="col-xs-8 col-xs-offset-2">
       {story()}
     </div>
-  )
+  ))
   .add('Default State', () => (
     <Search
       heading="Search GitHub"

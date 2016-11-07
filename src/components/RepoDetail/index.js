@@ -1,2 +1,1 @@
-import component from './RepoDetail.js';
-export default component;
+export { default } from './RepoDetail';

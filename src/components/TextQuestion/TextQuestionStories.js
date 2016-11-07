@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import TextQuestion from './index.js';
+import TextQuestion from './index';
 
 storiesOf('TextQuestion', module)
   .add('Default State', () => (

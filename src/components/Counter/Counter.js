@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Counter.scss';
 
-export const Counter = (props) => (
+export const Counter = props => (
   <div>
     <h2 className={classes.counterContainer}>
       Counter:

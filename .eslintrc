@@ -1,25 +1,29 @@
-{
-  "parser"  : "babel-eslint",
-  "extends" : [
-    "airbnb"
-  ],
-  "plugins": [
-    "babel",
-    "react"
-  ],
-  "env"     : {
-    "browser" : true
-  },
-  "globals" : {
-    "__DEV__"      : false,
-    "__PROD__"     : false,
-    "__DEBUG__"    : false,
-    "__COVERAGE__" : false,
-    "__BASENAME__" : false
-  },
-  "rules": {
-    "generator-star-spacing": 0,
-    "max-len": [2, 120, 2],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
-  }
-}
+parser: 'babel-eslint'
+
+extends: ['airbnb']
+
+plugins: ['babel', 'react', 'import']
+
+env:
+  browser: true
+
+globals:
+  __DEV__: false
+  __PROD__: false
+  __DEBUG__: false
+  __COVERAGE__: false
+  __BASENAME__: false
+
+rules:
+  #eslint base rules
+  "arrow-parens": 0
+  "generator-star-spacing": 0
+  "max-len": [2, 120, 2]
+
+  #react-plugin rules
+  "react/jsx-filename-extension": [2, { "extensions": [".js"] }]
+  "react/forbid-prop-types": 0
+  "react/no-unused-prop-types": 0
+
+  #import-plugin rules
+  "import/no-named-as-default": 0

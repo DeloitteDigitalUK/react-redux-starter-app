@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import _ from 'lodash';
 
-import RepoList from './index.js';
+import RepoList from './index';
 
 const repo = {
   author: 'DeloitteDigitalUK',
@@ -19,11 +19,11 @@ const repos = _.range(0, 5).map(i => ({
 }));
 
 storiesOf('RepoList', module)
-  .addDecorator(story =>
+  .addDecorator(story => (
     <div className="col-xs-12">
       {story()}
     </div>
-  )
+  ))
   .add('Multiple Repos', () => (
     <RepoList
       isLoading={false}

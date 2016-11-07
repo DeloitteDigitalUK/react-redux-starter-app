@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import ApiUtils from '../../utils/ApiUtils.js';
+import ApiUtils from '../../utils/ApiUtils';
 
 // Actions
 const LOAD = 'react-redux-starter-app/repositories/LOAD';
@@ -14,7 +14,7 @@ const initialState = {
 
 // Reducers
 const REDUCERS = {
-  [LOAD]: (state) => ({
+  [LOAD]: state => ({
     ...state,
     isLoading: true,
   }),

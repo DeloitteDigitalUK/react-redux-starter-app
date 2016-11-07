@@ -24,7 +24,7 @@ const browserHistory = useRouterHistory(createBrowserHistory)({
 const initialState = window.___INITIAL_STATE__; // eslint-disable-line no-underscore-dangle
 const store = createStore(initialState, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store, {
-  selectLocationState: (state) => state.router,
+  selectLocationState: state => state.router,
 });
 
 // ========================================================
@@ -49,7 +49,7 @@ let render = (routerKey = null) => {
       routes={routes}
       routerKey={routerKey}
     />,
-    MOUNT_NODE
+    MOUNT_NODE,
   );
 };
 

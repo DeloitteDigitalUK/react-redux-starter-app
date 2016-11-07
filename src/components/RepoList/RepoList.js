@@ -22,8 +22,8 @@ const RepoList = ({ isLoading, noReposText, repos }) => {
         buttonUrl={repo.url}
         buttonText="View on Github"
         linkText="View details"
-        linkUrl={'/details/' + repo.id}
-      />
+        linkUrl={`/details/${repo.id}`}
+      />,
     )}
   </div>);
 };
