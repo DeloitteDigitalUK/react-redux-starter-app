@@ -1,2 +1,1 @@
-import component from './Home.js';
-export default component;
+export { default } from './Home.js';

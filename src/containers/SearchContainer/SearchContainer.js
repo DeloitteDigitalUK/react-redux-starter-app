@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
@@ -9,29 +9,26 @@ import * as actionCreators from './SearchDucks.js';
 // Components
 import Search from '../../components/Search/';
 
-
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 
 const mapStateToProps = (state) => ({
-    heading: state.search.heading,
-    inputValue: state.search.inputValue,
-    buttonText: state.search.buttonText,
-    errorMessage: state.search.errorMessage,
-})
+  heading: state.search.heading,
+  inputValue: state.search.inputValue,
+  buttonText: state.search.buttonText,
+  errorMessage: state.search.errorMessage,
+});
 
-class SearchContainer extends Component {
+const SearchContainer = (props) => {
+  const searchProps = _.pick(props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
+  return <Search {...searchProps} onSubmit={props.createSearch} />;
+};
 
-    static propTypes = {
-        heading: PropTypes.string.isRequired,
-        inputValue: PropTypes.string,
-        buttonText: PropTypes.string.isRequired,
-        errorMessage: PropTypes.string,
-    };
-    
-    render () {
-        const searchProps = _.pick(this.props, ['heading', 'inputValue', 'buttonText', 'errorMessage']);
-        return <Search {...searchProps} onSubmit={this.props.createSearch} />
-    }
-}
+SearchContainer.propTypes = {
+  heading: PropTypes.string.isRequired,
+  inputValue: PropTypes.string,
+  buttonText: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string,
+  createSearch: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);

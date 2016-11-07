@@ -81,7 +81,7 @@ styles:
   pagination: false
   pager: false
   labels: false
-  jumbotron: false
+  jumbotron: true
   alert: false
   progress: false
   media: false

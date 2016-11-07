@@ -20,7 +20,7 @@ const TextQuestion = (props) => {
 
 TextQuestion.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export default TextQuestion;

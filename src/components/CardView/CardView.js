@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const CardView = (props) => {
-  const { title, text, imageUrl, imageAlt, imageWidth, imageHeight, buttonUrl, buttonText } = props;
+  const { title, text, imageUrl, imageAlt, imageWidth, imageHeight, buttonUrl, buttonText, linkUrl, linkText } = props;
 
   const image = imageUrl
     ? <img
@@ -18,8 +18,17 @@ const CardView = (props) => {
       href={buttonUrl}
       className="btn btn-secondary"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+    >
       {buttonText}
+    </a>
+    : undefined;
+
+  const link = (linkText && linkUrl)
+    ? <a
+      href={linkUrl}
+      className="btn btn-secondary">
+      {linkText}
     </a>
     : undefined;
 
@@ -30,6 +39,7 @@ const CardView = (props) => {
         <h4 className="card-title">{title}</h4>
         <p className="card-text">{text}</p>
         {button}
+        {link}
       </div>
     </div>
   );
@@ -43,7 +53,7 @@ CardView.propTypes = {
   imageWidth: PropTypes.number,
   imageHeight: PropTypes.number,
   buttonUrl: PropTypes.string,
-  buttonText: PropTypes.string
+  buttonText: PropTypes.string,
 };
 
 export default CardView;
