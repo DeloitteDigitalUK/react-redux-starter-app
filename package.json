@@ -58,7 +58,7 @@
       }
     },
     "start": {
-      "command": "npm run lint && babel-node bin/server",
+      "command": "babel-node bin/server",
       "env": {
         "DEBUG": "app:*"
       }
