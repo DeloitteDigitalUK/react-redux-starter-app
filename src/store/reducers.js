@@ -5,7 +5,6 @@ import { reducer as formReducer } from 'redux-form';
 // Reducers
 import repositories from '../containers/RepositoriesContainer/RepositoriesDucks';
 import repositoriesDetail from '../containers/RepositoriesDetailContainer/RepositoriesDetailDuck';
-import weatherforecast from '../containers/WeatherContainer/WeatherDucks';
 import search from '../containers/SearchContainer/SearchDucks';
 
 export const makeRootReducer = asyncReducers => combineReducers({
@@ -14,7 +13,6 @@ export const makeRootReducer = asyncReducers => combineReducers({
   search,
   repositories,
   repositoriesDetail,
-  weatherforecast,
   router,
   ...asyncReducers,
 });

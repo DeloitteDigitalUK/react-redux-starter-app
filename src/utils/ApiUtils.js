@@ -1,5 +1,3 @@
-export const weatherbaseUrl = 'https://query.yahooapis.com/v1/public/yql';
-
 /**
  * Throw an error if the given response was not a 2xx status.
  *
