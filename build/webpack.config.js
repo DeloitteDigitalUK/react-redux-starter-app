@@ -25,8 +25,12 @@ const webpackConfig = {
 // ------------------------------------
 // Entry Points
 // ------------------------------------
+
+// In dev, inline Bootstrap styles. In prod, compile them to separate file.
+const bootstrapEntry = __DEV__ ? 'bootstrap-loader' : 'bootstrap-loader/extractStyles';
+
 const APP_ENTRY_PATHS = [
-  'bootstrap-loader',
+  bootstrapEntry,
   'babel-polyfill',
   'whatwg-fetch', // Make fetch() polyfill global.
   paths.client('main.js'),
