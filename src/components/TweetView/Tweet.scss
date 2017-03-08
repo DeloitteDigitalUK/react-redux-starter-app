@@ -1,0 +1,36 @@
+.block {
+  border-bottom: 1px solid #e1e8ed;
+  border-left: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+  padding: 10px 15px;
+  list-style: none;
+  background-color: white;
+  &:hover {
+    background-color: #f5f8fa;
+  }
+}
+
+.tweet {
+  display: inline-block;
+  vertical-align: top;
+  width: 90%;
+  li {
+    list-style-type: none;
+    .screenName {
+      font-size: 13px;
+      color: #8899a6;
+    }
+    .fullName {
+      color: #292f33;
+      font-weight: bold;
+    }
+  }
+}
+
+.image {
+  display: inline-block;
+  width: 10%;
+  img {
+    border-radius: 5px;
+  }
+}
