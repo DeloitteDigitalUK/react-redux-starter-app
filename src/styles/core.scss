@@ -1,29 +1,6 @@
+// Sample custom font import. Keep outside the :global scope
+@import 'fonts/open-sans/open-sans';
+
 :global {
   @import 'base';
-
-  html {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  // Vertically center components in storybook.
-  .storybook-container {
-    height: 100vh;
-    align-items: center;
-  }
 }
